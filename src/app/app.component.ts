@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { WmatToolbarComponent } from 'wmat-components';
+import { BookmarkService } from './services/bookmark.service';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,5 @@ import { WmatToolbarComponent } from 'wmat-components';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'bookmarker';
+  bookmarkService = inject(BookmarkService);
 }
