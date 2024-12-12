@@ -29,4 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Init project
 1. Create bookmarker github project
 2. Create angular project with a previous stable version: npx -p @angular/cli@18.x.x ng new bookmarker --directory=./ --style=scss
-3. Adding AngularMaterial: ng add @angular/material
+3. Config AngularMaterial: ng add @angular/material
+4. Config Ngrx store: ng add @ngrx/store@latest --no-minimal
