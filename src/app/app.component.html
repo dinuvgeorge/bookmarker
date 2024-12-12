@@ -1,44 +1,19 @@
-<wmat-toolbar>Bookmarker</wmat-toolbar>
+<!--<wmat-toolbar routerLink="/">Bookmarker</wmat-toolbar>-->
+<mat-toolbar color="primary"  >
+  <mat-toolbar-row>
+  <span>
+     Bookmarker
+  </span>
+    <mat-form-field class="example-full-width">
+      <mat-icon aria-hidden="false" aria-label="Search" fontIcon="search"></mat-icon>
+
+      <input matInput placeholder="Filter bookmarks..." value="Sushi" [ngModel]="searchText" (ngModelChange)="onSearch($event)">
+    </mat-form-field>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <div class="container">
-
-  Today
-
-  @for (item of bookmarks | async; track item.id) {
-    <li>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
-      {{ item.name }}
-      <a href="{{item.url}}" target="_blank">{{item.url}}</a>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
-    </li>
-  } @empty {
-    <li>There are no items.</li>
-  }
-
-  Yesterday
-
-  @for (item of bookmarks | async; track item.id) {
-    <li>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
-      {{ item.name }}
-      <a href="{{item.url}}" target="_blank">{{item.url}}</a>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
-    </li>
-  } @empty {
-    <li>There are no items.</li>
-  }
-
-  Older
-
-  @for (item of bookmarks | async; track item.id) {
-    <li>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
-      {{ item.name }}
-      <a href="{{item.url}}" target="_blank">{{item.url}}</a>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
-    </li>
-  } @empty {
-    <li>There are no items.</li>
-  }
+  <router-outlet></router-outlet>
 </div>
 

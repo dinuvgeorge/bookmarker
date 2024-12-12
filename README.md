@@ -33,4 +33,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 4. Config Ngrx store: ng add @ngrx/store@latest --no-minimal
 5. Config es-lint and prettier, config prettier plugin
 6. Config wmat-components as external reusable library
-6. Config angular-in-memory-web-api + config UUID for uniqueID's
+6. Config angular-in-memory-web-api + config RandomUuid for uniqueID's

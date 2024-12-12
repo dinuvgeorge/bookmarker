@@ -1,5 +1,5 @@
 export interface BookmarkDto {
-  id: string;
+  id: number;
   name: string;
   url: string;
   createDate: Date;
