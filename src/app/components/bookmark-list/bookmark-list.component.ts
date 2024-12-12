@@ -30,7 +30,7 @@ export class BookmarkListComponent implements OnInit {
   bookmarks: Bookmark[] = [];
 
   constructor() {
-    this.bookmarkEffects.getFilteredBookmarksEffect$
+    this.bookmarkEffects.filteredBookmarksEffect$
       .pipe(
         switchMap((searchData) => {
           return this.store

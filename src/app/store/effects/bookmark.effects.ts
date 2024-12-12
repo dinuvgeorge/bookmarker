@@ -6,7 +6,11 @@ import { BookmarksActions } from '../actions/bookmark.actions';
 export class BookmarkEffects {
   actions$ = inject(Actions);
 
-  getFilteredBookmarksEffect$ = createEffect(() =>
+  filteredBookmarksEffect$ = createEffect(() =>
     this.actions$.pipe(ofType(BookmarksActions.searchBookmarks)),
+  );
+
+  updateBookmarkSearchTextEffect$ = createEffect(() =>
+    this.actions$.pipe(ofType(BookmarksActions.updateBookmarkSearchText)),
   );
 }

@@ -8,6 +8,7 @@ export const BookmarksActions = createActionGroup({
     'Add Bookmark': props<Bookmark>(),
     'Update Bookmark': props<Bookmark>(),
     'Remove Bookmark': props<{ bookmarkId: number }>(),
+    'Update Bookmark Search Text': props<{ text: string }>(),
     'Search Bookmarks': props<{
       text: string;
     }>(),

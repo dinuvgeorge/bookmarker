@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { WmatToolbarComponent } from 'wmat-components';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
@@ -8,6 +8,7 @@ import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { BookmarksActions } from './store/actions/bookmark.actions';
 import { Store } from '@ngrx/store';
+import { BookmarkEffects } from './store/effects/bookmark.effects';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,15 @@ import { Store } from '@ngrx/store';
 export class AppComponent {
   store = inject(Store);
 
+  bookmarkEffects = inject(BookmarkEffects);
+
   searchText = '';
+
+  constructor() {
+    this.bookmarkEffects.updateBookmarkSearchTextEffect$.subscribe((data) => {
+      this.searchText = data.text;
+    });
+  }
 
   onSearch($event: string) {
     this.store.dispatch(BookmarksActions.searchBookmarks({ text: $event }));

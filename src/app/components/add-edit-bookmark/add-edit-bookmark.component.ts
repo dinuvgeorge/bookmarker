@@ -19,6 +19,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Bookmark } from '../../models/bookmark';
 import { BookmarkApiService } from '../../api-services/bookmark-api.service';
+import { BookmarksActions } from '../../store/actions/bookmark.actions';
 
 @Component({
   selector: 'app-edit-bookmark',
@@ -81,6 +82,13 @@ export class AddEditBookmarkComponent {
     }
   }
 
+  onCancel() {
+    this.store.dispatch(
+      BookmarksActions.updateBookmarkSearchText({ text: '' }),
+    );
+    this.router.navigate(['../../'], { relativeTo: this.activatedRoute });
+  }
+
   private createUser() {
     const newBookmark = {
       name: this.form.value.name,
@@ -92,6 +100,9 @@ export class AddEditBookmarkComponent {
       .createBookmark(newBookmark)
       .pipe()
       .subscribe((savedBookmark) => {
+        this.store.dispatch(
+          BookmarksActions.updateBookmarkSearchText({ text: '' }),
+        );
         this.router.navigate(['../'], { relativeTo: this.activatedRoute });
       });
   }
@@ -109,6 +120,9 @@ export class AddEditBookmarkComponent {
       .updateBookmark(bookmark)
       .pipe()
       .subscribe((savedBookmark) => {
+        this.store.dispatch(
+          BookmarksActions.updateBookmarkSearchText({ text: '' }),
+        );
         this.router.navigate(['../../'], { relativeTo: this.activatedRoute });
       });
   }
