@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -38,6 +38,7 @@ import { BookmarkApiService } from '../../api-services/bookmark-api.service';
   ],
   templateUrl: './add-edit-bookmark.component.html',
   styleUrl: './add-edit-bookmark.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddEditBookmarkComponent {
   store = inject(Store);

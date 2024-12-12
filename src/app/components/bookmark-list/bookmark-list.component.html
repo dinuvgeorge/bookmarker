@@ -4,7 +4,7 @@
 
 Today
 
-@for (bookmark of bookmarks$ | async; track bookmark.id) {
+@for (bookmark of bookmarks; track bookmark.id) {
   <li>
     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
     {{ bookmark.name }}

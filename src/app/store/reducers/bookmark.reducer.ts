@@ -25,21 +25,4 @@ export const bookmarkReducer = createReducer(
   on(BookmarksActions.addBookmark, (state, bookmark) => {
     return [bookmark, ...state];
   }),
-  on(BookmarksActions.searchBookmarks, (state, { text }) => {
-    console.log(state, text);
-    console.log('initialState', initialState);
-
-    return state.filter((item) => fuzzyMatch(text, item.name));
-  }),
 );
-
-export const fuzzyMatch = (pattern: string, str: string): boolean => {
-  pattern =
-    '.*' +
-    pattern
-      .split('')
-      .map((l) => `${l.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}.*`)
-      .join('');
-  const re = new RegExp(pattern, 'i');
-  return re.test(str);
-};

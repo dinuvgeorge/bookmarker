@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { WmatToolbarComponent } from 'wmat-components';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
@@ -25,6 +25,7 @@ import { Store } from '@ngrx/store';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   store = inject(Store);
