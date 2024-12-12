@@ -25,7 +25,6 @@ import { Store } from '@ngrx/store';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   store = inject(Store);

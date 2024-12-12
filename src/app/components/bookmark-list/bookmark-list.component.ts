@@ -22,7 +22,6 @@ import { Bookmark } from '../../models/bookmark';
   imports: [AsyncPipe, MatIcon, RouterLink],
   templateUrl: './bookmark-list.component.html',
   styleUrl: './bookmark-list.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BookmarkListComponent implements OnInit {
   store = inject(Store);
