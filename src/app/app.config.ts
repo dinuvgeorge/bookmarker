@@ -11,7 +11,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideStore } from '@ngrx/store';
 import { metaReducers, reducers } from './reducers';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataBookmarkService } from './a-inmemory-data-services/in-memory-data-bookmark.service';
+import { InMemoryDataBookmarkService } from './a-inmemory-data/services/in-memory-data-bookmark.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [

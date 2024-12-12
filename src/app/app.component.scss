@@ -1,1 +1,23 @@
+.container {
+  width: 100%; /* Full width */
+  padding-left: 15px; /* Add padding to the left */
+  padding-right: 15px; /* Add padding to the right */
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
 
+/* Optionally, you can add media queries to make it responsive */
+@media (min-width: 576px) {
+  .container {
+    padding-left: 30px; /* Increased padding for larger screens */
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 60px; /* Even more padding for large screens */
+    padding-right: 60px;
+  }
+}

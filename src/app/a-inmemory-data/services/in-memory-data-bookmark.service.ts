@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { UUID } from '../core/uuid';
-import { Bookmark } from '../models/bookmark';
+import { UUID } from '../../core/uuid';
+import { BookmarkDto } from '../dto/bookmark-dto';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataBookmarkService implements InMemoryDbService {
-  items: Bookmark[] = [
+  items: BookmarkDto[] = [
     {
       id: new UUID().value,
       name: 'Angular',
@@ -41,7 +41,7 @@ export class InMemoryDataBookmarkService implements InMemoryDbService {
     return { items: this.items };
   }
 
-  getAllItems(reqInfo: any): Observable<Bookmark[]> {
+  getAllItems(reqInfo: any): Observable<BookmarkDto[]> {
     const items = this.items;
     return reqInfo.utils.createResponse$(() => ({
       body: items,
@@ -49,7 +49,7 @@ export class InMemoryDataBookmarkService implements InMemoryDbService {
     }));
   }
 
-  getItemById(reqInfo: any): Observable<Bookmark[]> {
+  getItemById(reqInfo: any): Observable<BookmarkDto[]> {
     const id = reqInfo.id;
     const item = this.items.find((i: any) => i.id === id);
     return reqInfo.utils.createResponse$(() => ({
@@ -58,7 +58,7 @@ export class InMemoryDataBookmarkService implements InMemoryDbService {
     }));
   }
 
-  addNewItem(reqInfo: any): Observable<Bookmark[]> {
+  addNewItem(reqInfo: any): Observable<BookmarkDto[]> {
     const newItem = reqInfo.utils.getJsonBody(reqInfo.req);
     newItem.id = this.items.length + 1; // Generate a new id
     this.items.push(newItem);
@@ -68,7 +68,7 @@ export class InMemoryDataBookmarkService implements InMemoryDbService {
     }));
   }
 
-  updateItem(reqInfo: any): Observable<Bookmark[]> {
+  updateItem(reqInfo: any): Observable<BookmarkDto[]> {
     const id = reqInfo.id;
     const updatedItem = reqInfo.utils.getJsonBody(reqInfo.req);
     const index = this.items.findIndex((i: any) => i.id === id);
@@ -87,7 +87,7 @@ export class InMemoryDataBookmarkService implements InMemoryDbService {
   }
 
   // DELETE item
-  deleteItem(reqInfo: any): Observable<Bookmark[]> {
+  deleteItem(reqInfo: any): Observable<BookmarkDto[]> {
     const id = reqInfo.id;
     const index = this.items.findIndex((i: any) => i.id === id);
     if (index !== -1) {

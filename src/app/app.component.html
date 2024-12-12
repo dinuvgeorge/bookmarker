@@ -1,8 +1,42 @@
 <wmat-toolbar>Bookmarker</wmat-toolbar>
 
 <div class="container">
+
+  Today
+
   @for (item of bookmarks | async; track item.id) {
-    <li>{{ item.name }}</li>
+    <li>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
+      {{ item.name }}
+      <a href="{{item.url}}" target="_blank">{{item.url}}</a>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+    </li>
+  } @empty {
+    <li>There are no items.</li>
+  }
+
+  Yesterday
+
+  @for (item of bookmarks | async; track item.id) {
+    <li>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
+      {{ item.name }}
+      <a href="{{item.url}}" target="_blank">{{item.url}}</a>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+    </li>
+  } @empty {
+    <li>There are no items.</li>
+  }
+
+  Older
+
+  @for (item of bookmarks | async; track item.id) {
+    <li>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
+      {{ item.name }}
+      <a href="{{item.url}}" target="_blank">{{item.url}}</a>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+    </li>
   } @empty {
     <li>There are no items.</li>
   }
