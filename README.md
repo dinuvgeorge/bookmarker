@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Init project
+1. Create bookmarker github project
+2. Create angular project with a previous stable version npx -p @angular/cli@18.x.x ng new bookmarker --directory=./ --style=scss
