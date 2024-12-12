@@ -31,3 +31,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Create angular project with a previous stable version: npx -p @angular/cli@18.x.x ng new bookmarker --directory=./ --style=scss
 3. Config AngularMaterial: ng add @angular/material
 4. Config Ngrx store: ng add @ngrx/store@latest --no-minimal
+5. Config es-lint and prettier
