@@ -1,12 +1,8 @@
-
-
-<button routerLink="add">Add</button>
-
 Today
 
 @for (bookmark of bookmarks; track bookmark.id) {
   <li>
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Bookmark icon" fontIcon="bookmark"></mat-icon>
     {{ bookmark.name }}
     <a href="{{bookmark.url}}" target="_blank">{{ bookmark.url }}</a>
     <mat-icon aria-hidden="false" aria-label="Edit" fontIcon="edit"
@@ -21,28 +17,4 @@ Today
   <li>There are no items.</li>
 }
 
-<!--Yesterday-->
 
-<!--@for (item of bookmarks$ | async; track item.id) {-->
-<!--  <li>-->
-<!--    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>-->
-<!--    {{ item.name }}-->
-<!--    <a href="{{item.url}}" target="_blank">{{ item.url }}</a>-->
-<!--    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>-->
-<!--  </li>-->
-<!--} @empty {-->
-<!--  <li>There are no items.</li>-->
-<!--}-->
-
-<!--Older-->
-
-<!--@for (item of bookmarks$ | async; track item.id) {-->
-<!--  <li>-->
-<!--    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="bookmark"></mat-icon>-->
-<!--    {{ item.name }}-->
-<!--    <a href="{{item.url}}" target="_blank">{{ item.url }}</a>-->
-<!--    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>-->
-<!--  </li>-->
-<!--} @empty {-->
-<!--  <li>There are no items.</li>-->
-<!--}-->

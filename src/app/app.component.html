@@ -1,19 +1,19 @@
-<!--<wmat-toolbar routerLink="/">Bookmarker</wmat-toolbar>-->
 <mat-toolbar>
-  <mat-toolbar-row>
-  <span>
-     Bookmarker
-  </span>
-    <mat-form-field class="example-full-width">
-      <mat-icon aria-hidden="false" aria-label="Search" fontIcon="search"></mat-icon>
+  <mat-toolbar-row class="toolbar-row">
+    <span>Bookmarker</span>
 
-      <input matInput placeholder="Filter bookmarks..." value="Sushi" [(ngModel)]="searchText" (ngModelChange)="onSearch($event)">
+    <mat-form-field class="search-field">
+      <mat-icon aria-hidden="false" aria-label="Search" fontIcon="search"></mat-icon>
+      <input matInput placeholder="Filter bookmarks..." [(ngModel)]="searchText" (ngModelChange)="onSearch($event)">
     </mat-form-field>
-    <span class="example-spacer"></span>
+
+    <span class="example-spacer">
+    <a mat-button routerLink="/add"><mat-icon aria-hidden="false" aria-label="Add" fontIcon="add" routerLink="/add"></mat-icon>
+    </a>
+    </span>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-

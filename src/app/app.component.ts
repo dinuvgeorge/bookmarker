@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { BookmarksActions } from './store/actions/bookmark.actions';
 import { Store } from '@ngrx/store';
 import { BookmarkEffects } from './store/effects/bookmark.effects';
+import { MatAnchor } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { BookmarkEffects } from './store/effects/bookmark.effects';
     MatIcon,
     MatToolbarRow,
     FormsModule,
+    MatAnchor,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

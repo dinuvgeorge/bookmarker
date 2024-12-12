@@ -2,21 +2,21 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-       {{ isAddMode ? 'Create New Bookmark' : 'Edit Existing Bookmark'  }}
+        {{ isAddMode ? 'Create New Bookmark' : 'Edit Existing Bookmark' }}
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
 
       <mat-form-field>
-        <input matInput #input placeholder="Name" formControlName="name"  />
+        <input matInput placeholder="Name" formControlName="name"/>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput #input  placeholder="URL"  formControlName="url"  />
+        <input matInput placeholder="URL" formControlName="url"/>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button type="reset"  mat-raised-button (click)="onCancel()">CANCEL</button>
+      <button type="reset" mat-raised-button (click)="onCancel()">CANCEL</button>
       <button type="submit" mat-raised-button color="primary">SAVE</button>
     </mat-card-actions>
   </mat-card>

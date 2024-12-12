@@ -1,23 +1,55 @@
 .container {
-  width: 100%; /* Full width */
-  padding-left: 15px; /* Add padding to the left */
-  padding-right: 15px; /* Add padding to the right */
+  padding-left: 15px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  box-sizing: border-box;
 }
 
-/* Optionally, you can add media queries to make it responsive */
+
 @media (min-width: 576px) {
   .container {
-    padding-left: 30px; /* Increased padding for larger screens */
+    padding-left: 30px;
     padding-right: 30px;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    padding-left: 60px; /* Even more padding for large screens */
+    padding-left: 60px;
     padding-right: 60px;
+  }
+}
+
+
+.toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.toolbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+
+.search-field {
+  flex-grow: 1;
+  max-width: 600px;
+  margin-left: 20px;
+}
+
+
+@media (max-width: 600px) {
+  .search-field {
+    max-width: 80%;
+  }
+
+  .toolbar-title {
+    font-size: 1.2rem;
   }
 }
