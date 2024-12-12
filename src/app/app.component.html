@@ -1,1 +1,10 @@
 <wmat-toolbar>Bookmarker</wmat-toolbar>
+
+<div class="container">
+  @for (item of bookmarks | async; track item.id) {
+    <li>{{ item.name }}</li>
+  } @empty {
+    <li>There are no items.</li>
+  }
+</div>
+
