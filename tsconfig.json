@@ -22,7 +22,12 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "wmat-components": [
+        "./dist/wmat-components"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

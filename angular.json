@@ -108,6 +108,49 @@
           }
         }
       }
+    },
+    "wmat-components": {
+      "projectType": "library",
+      "root": "projects/wmat-components",
+      "sourceRoot": "projects/wmat-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/wmat-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wmat-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/wmat-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/wmat-components/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/wmat-components/**/*.ts",
+              "projects/wmat-components/**/*.html"
+            ],
+            "eslintConfig": "projects/wmat-components/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {

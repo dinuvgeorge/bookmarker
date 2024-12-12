@@ -5,9 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
+    "watch-lib:wmat-components": "ng build wmat-components --watch",
+    "watch-libs": "npm-run-all clean --parallel watch-lib:*",
+    "build-lib:wmat-components": "ng build wmat-components --prod",
+    "build-all": "ng build ui-components --prod && ng build --prod",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +43,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^18.2.0",
     "prettier": "^3.4.2",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.18.0"

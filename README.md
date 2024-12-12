@@ -32,3 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 3. Config AngularMaterial: ng add @angular/material
 4. Config Ngrx store: ng add @ngrx/store@latest --no-minimal
 5. Config es-lint and prettier, config prettier plugin
+6. Config wmat-components as external reusable library
