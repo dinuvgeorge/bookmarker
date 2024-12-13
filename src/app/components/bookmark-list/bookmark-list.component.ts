@@ -85,6 +85,7 @@ export class BookmarkListComponent implements OnInit {
   }
 
   private updateBookmarksList(bookmarks: Bookmark[]) {
+    this.bookmarksList = [];
     this.bookmarksList.push({
       type: 'TODAY',
       bookmarks: bookmarks.filter(
