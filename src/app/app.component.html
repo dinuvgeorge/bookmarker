@@ -7,10 +7,7 @@
       <input matInput placeholder="Filter bookmarks..." [(ngModel)]="searchText" (ngModelChange)="onSearch($event)">
     </mat-form-field>
 
-    <span class="example-spacer">
-    <a mat-button routerLink="/add"><mat-icon aria-hidden="false" aria-label="Add" fontIcon="add" routerLink="/add"></mat-icon>
-    </a>
-    </span>
+    <a routerLink="/add"><mat-icon aria-hidden="false" aria-label="Add" fontIcon="add"></mat-icon></a>
   </mat-toolbar-row>
 </mat-toolbar>
 

@@ -86,7 +86,7 @@ export class AddEditBookmarkComponent {
     this.store.dispatch(
       BookmarksActions.updateBookmarkSearchText({ text: '' }),
     );
-    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
+    this.router.navigate(['/'], { relativeTo: this.activatedRoute });
   }
 
   private createUser() {

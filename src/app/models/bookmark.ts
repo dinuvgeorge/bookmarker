@@ -3,5 +3,5 @@ export interface Bookmark {
   name: string;
   url: string;
   createDate: Date;
-  modifiedDate?: Date;
+  modifiedDate: Date;
 }

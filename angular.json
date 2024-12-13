@@ -33,7 +33,7 @@
             ],
             "styles": [
               "bootstrap/dist/css/bootstrap.min.css",
-              "@angular/material/prebuilt-themes/azure-blue.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -94,7 +94,7 @@
             ],
             "styles": [
               "bootstrap/dist/css/bootstrap.min.css",
-              "@angular/material/prebuilt-themes/azure-blue.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []

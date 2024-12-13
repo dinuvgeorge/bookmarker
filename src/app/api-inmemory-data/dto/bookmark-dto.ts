@@ -3,5 +3,5 @@ export interface BookmarkDto {
   name: string;
   url: string;
   createDate: Date;
-  modifiedDate?: Date;
+  modifiedDate: Date;
 }
