@@ -94,6 +94,7 @@ export class AddEditBookmarkComponent {
       name: this.form.value.name,
       url: this.form.value.url,
       createDate: new Date(),
+      modifiedDate: new Date(),
     } as Bookmark;
 
     this.bookmarkApiService
