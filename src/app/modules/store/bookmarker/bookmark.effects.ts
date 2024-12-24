@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { BookmarksActions } from '../actions/bookmark.actions';
+import { BookmarksActions } from './bookmark.actions';
 
 @Injectable({ providedIn: 'root' })
 export class BookmarkEffects {

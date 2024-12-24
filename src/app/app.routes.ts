@@ -14,24 +14,24 @@ export const routes: Routes = [
     path: '',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./components/bookmark-list/bookmark-list.component').then(
-        (m) => m.BookmarkListComponent,
-      ),
+      import(
+        './modules/bookmarker/components/bookmark-list/bookmark-list.component'
+      ).then((m) => m.BookmarkListComponent),
   },
   {
     path: 'add',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./components/add-edit-bookmark/add-edit-bookmark.component').then(
-        (m) => m.AddEditBookmarkComponent,
-      ),
+      import(
+        './modules/bookmarker/components/add-edit-bookmark/add-edit-bookmark.component'
+      ).then((m) => m.AddEditBookmarkComponent),
   },
   {
     path: 'edit/:id',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./components/add-edit-bookmark/add-edit-bookmark.component').then(
-        (m) => m.AddEditBookmarkComponent,
-      ),
+      import(
+        './modules/bookmarker/components/add-edit-bookmark/add-edit-bookmark.component'
+      ).then((m) => m.AddEditBookmarkComponent),
   },
 ];

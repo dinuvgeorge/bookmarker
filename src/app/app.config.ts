@@ -9,7 +9,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore } from '@ngrx/store';
-import { metaReducers, reducers } from './store';
+import { metaReducers, reducers } from './modules/store';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataBookmarkService } from './api-inmemory-data/services/in-memory-data-bookmark.service';
 

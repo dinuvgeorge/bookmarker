@@ -1,6 +1,6 @@
 import { isDevMode } from '@angular/core';
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
-import { bookmarkReducer } from './reducers/bookmark.reducer';
+import { bookmarkReducer } from './bookmarker/bookmark.reducer';
 
 export interface State {}
 

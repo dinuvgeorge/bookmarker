@@ -1,0 +1,32 @@
+<mat-list>
+  @for (listItem of bookmarksList; track listItem.type) {
+    <div mat-subheader>
+      <span>{{ listItem.type }}</span>
+    </div>
+    @for (bookmark of listItem.bookmarks; track bookmark.id) {
+      <mat-list-item>
+        <mat-icon matListItemIcon>bookmark</mat-icon>
+        <div matListItemTitle>{{ bookmark.name }}</div>
+        <div matListItemLine>
+          <a href="{{ bookmark.url }}" target="_blank">{{ bookmark.url }}</a>
+        </div>
+        <span matListItemMeta
+          ><mat-icon
+            aria-hidden="false"
+            aria-label="Edit"
+            fontIcon="edit"
+            routerLink="edit/{{ bookmark.id }}"
+          ></mat-icon
+        ></span>
+        <span matListItemMeta
+          ><mat-icon
+            aria-hidden="false"
+            aria-label="Delete"
+            fontIcon="delete"
+            (click)="onRemove(bookmark.id)"
+          ></mat-icon
+        ></span>
+      </mat-list-item>
+    }
+  }
+</mat-list>

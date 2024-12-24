@@ -1,32 +1,28 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import { BookmarkApiService } from '../../api-services/bookmark-api.service';
-import { selectBookmark } from '../../store/selectors/bookmarks.selectors';
-import { BookmarksActions } from '../../store/actions/bookmark.actions';
+import { selectBookmark } from '../../../store/bookmarker/bookmarks.selectors';
+import { BookmarksActions } from '../../../store/bookmarker/bookmark.actions';
 import { RouterLink } from '@angular/router';
-import { BookmarkEffects } from '../../store/effects/bookmark.effects';
+import { BookmarkEffects } from '../../../store/bookmarker/bookmark.effects';
 import { map, switchMap } from 'rxjs';
-import { Bookmark } from '../../models/bookmark';
 import {
   MatList,
   MatListItem,
   MatListSubheaderCssMatStyler,
 } from '@angular/material/list';
-import { MatDivider } from '@angular/material/divider';
+import { BookmarkState } from '../../../store/bookmarker/bookmark.reducer';
 
 @Component({
   selector: 'app-bookmark-list',
   standalone: true,
   imports: [
-    AsyncPipe,
     MatIcon,
     RouterLink,
     MatList,
     MatListItem,
     MatListSubheaderCssMatStyler,
-    MatDivider,
   ],
   templateUrl: './bookmark-list.component.html',
   styleUrl: './bookmark-list.component.scss',
@@ -37,7 +33,7 @@ export class BookmarkListComponent implements OnInit {
   bookmarkEffects = inject(BookmarkEffects);
   bookmarksList: {
     type: 'TODAY' | 'YESTERDAY' | 'OLDER';
-    bookmarks: Bookmark[];
+    bookmarks: BookmarkState[];
   }[] = [];
 
   constructor() {
@@ -84,7 +80,7 @@ export class BookmarkListComponent implements OnInit {
     return re.test(str);
   }
 
-  private updateBookmarksList(bookmarks: Bookmark[]) {
+  private updateBookmarksList(bookmarks: BookmarkState[]) {
     this.bookmarksList = [];
     this.bookmarksList.push({
       type: 'TODAY',

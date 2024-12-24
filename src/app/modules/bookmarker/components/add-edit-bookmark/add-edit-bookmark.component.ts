@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -15,11 +15,11 @@ import {
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatButton } from '@angular/material/button';
 import { MatInput } from '@angular/material/input';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Bookmark } from '../../models/bookmark';
 import { BookmarkApiService } from '../../api-services/bookmark-api.service';
-import { BookmarksActions } from '../../store/actions/bookmark.actions';
+import { BookmarksActions } from '../../../store/bookmarker/bookmark.actions';
+import { BookmarkState } from '../../../store/bookmarker/bookmark.reducer';
 
 @Component({
   selector: 'app-edit-bookmark',
@@ -35,7 +35,6 @@ import { BookmarksActions } from '../../store/actions/bookmark.actions';
     MatButton,
     MatInput,
     MatLabel,
-    RouterLink,
   ],
   templateUrl: './add-edit-bookmark.component.html',
   styleUrl: './add-edit-bookmark.component.scss',
@@ -95,7 +94,7 @@ export class AddEditBookmarkComponent {
       url: this.form.value.url,
       createDate: new Date(),
       modifiedDate: new Date(),
-    } as Bookmark;
+    } as BookmarkState;
 
     this.bookmarkApiService
       .createBookmark(newBookmark)
@@ -115,7 +114,7 @@ export class AddEditBookmarkComponent {
       url: this.form.value.url,
       createDate: new Date(),
       modifiedDate: new Date(),
-    } as Bookmark;
+    } as BookmarkState;
 
     this.bookmarkApiService
       .updateBookmark(bookmark)

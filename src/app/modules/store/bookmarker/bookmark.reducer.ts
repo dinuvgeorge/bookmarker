@@ -1,8 +1,15 @@
-import { createReducer, on } from '@ngrx/store';
-import { BookmarksActions } from '../actions/bookmark.actions';
-import { Bookmark } from '../../models/bookmark';
+import {createReducer, on} from '@ngrx/store';
+import {BookmarksActions} from './bookmark.actions';
 
-export const initialState: ReadonlyArray<Bookmark> = [];
+export interface BookmarkState {
+  id: number;
+  name: string;
+  url: string;
+  createDate: Date;
+  modifiedDate: Date;
+}
+
+export const initialState: ReadonlyArray<BookmarkState> = [];
 
 export const bookmarkReducer = createReducer(
   initialState,

@@ -1,12 +1,15 @@
 import { createActionGroup, props } from '@ngrx/store';
-import { Bookmark } from '../../models/bookmark';
+
+import { BookmarkState } from './bookmark.reducer';
 
 export const BookmarksActions = createActionGroup({
   source: 'Bookmarks',
   events: {
-    'Retrieved Bookmark List': props<{ bookmarks: ReadonlyArray<Bookmark> }>(),
-    'Add Bookmark': props<Bookmark>(),
-    'Update Bookmark': props<Bookmark>(),
+    'Retrieved Bookmark List': props<{
+      bookmarks: ReadonlyArray<BookmarkState>;
+    }>(),
+    'Add Bookmark': props<BookmarkState>(),
+    'Update Bookmark': props<BookmarkState>(),
     'Remove Bookmark': props<{ bookmarkId: number }>(),
     'Update Bookmark Search Text': props<{ text: string }>(),
     'Search Bookmarks': props<{

@@ -6,9 +6,9 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { BookmarksActions } from './store/actions/bookmark.actions';
+import { BookmarksActions } from './modules/store/bookmarker/bookmark.actions';
 import { Store } from '@ngrx/store';
-import { BookmarkEffects } from './store/effects/bookmark.effects';
+import { BookmarkEffects } from './modules/store/bookmarker/bookmark.effects';
 import { MatAnchor } from '@angular/material/button';
 
 @Component({

@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, filter, map, Observable, of } from 'rxjs';
-import { Bookmark } from '../models/bookmark';
-import { BookmarkDto } from '../api-inmemory-data/dto/bookmark-dto';
+import { map, Observable } from 'rxjs';
+import { BookmarkDto } from '../../../api-inmemory-data/dto/bookmark-dto';
+import { BookmarkState } from '../../store/bookmarker/bookmark.reducer';
 
 @Injectable({
   providedIn: 'root',
@@ -12,20 +12,21 @@ export class BookmarkApiService {
 
   private baseApi = 'api/items';
 
-  getAllBookmarks(): Observable<Bookmark[]> {
+  getAllBookmarks(): Observable<BookmarkState[]> {
     return this.httpClient
       .get<BookmarkDto[]>(this.baseApi)
       .pipe(map((books) => books || []));
   }
-  getBookmarkById(id: number): Observable<Bookmark> {
+
+  getBookmarkById(id: number): Observable<BookmarkState> {
     return this.httpClient.get<BookmarkDto>(`${this.baseApi}/${id}`);
   }
 
-  createBookmark(bookmark: Bookmark): Observable<Bookmark> {
+  createBookmark(bookmark: BookmarkState): Observable<BookmarkState> {
     return this.httpClient.post<BookmarkDto>(this.baseApi, bookmark);
   }
 
-  updateBookmark(bookmark: Bookmark): Observable<Bookmark> {
+  updateBookmark(bookmark: BookmarkState): Observable<BookmarkState> {
     return this.httpClient.put<BookmarkDto>(
       `${this.baseApi}/${bookmark.id}`,
       bookmark,
