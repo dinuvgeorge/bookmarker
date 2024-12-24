@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { WmatToolbarComponent } from 'wmat-components';
+// import { WmatToolbarComponent } from 'wmat-components';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
@@ -16,7 +16,7 @@ import { MatAnchor } from '@angular/material/button';
   standalone: true,
   imports: [
     RouterOutlet,
-    WmatToolbarComponent,
+    // WmatToolbarComponent,
     RouterLink,
     MatToolbar,
     MatFormField,
